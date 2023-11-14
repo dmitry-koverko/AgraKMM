@@ -13,6 +13,7 @@ kotlin {
                 jvmTarget = "11"
             }
         }
+        publishLibraryVariants("release", "debug")
     }
     
     listOf(
