@@ -1,7 +1,11 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("maven-publish")
 }
+
+group = "com.github.jitpack"
+version = "1.0"
 
 kotlin {
     android {
@@ -57,5 +61,13 @@ android {
     compileSdk = 33
     defaultConfig {
         minSdk = 24
+    }
+}
+
+afterEvaluate{
+    publishing {
+        publications {
+
+        }
     }
 }
