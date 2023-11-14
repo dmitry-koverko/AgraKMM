@@ -4,9 +4,6 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.jitpack"
-version = "1.0"
-
 kotlin {
     android {
         compilations.all {
@@ -62,12 +59,25 @@ android {
     defaultConfig {
         minSdk = 24
     }
+
+    publishing {
+        multipleVariants {
+            allVariants()
+            withJavadocJar()
+            withSourcesJar()
+        }
+    }
 }
 
-afterEvaluate{
+afterEvaluate {
     publishing {
         publications {
 
+            create<MavenPublication>("maven") {
+                groupId = "com.AgraKMM"
+                artifactId = "AgraKMM"
+                version = "1.0"
+            }
         }
     }
 }
